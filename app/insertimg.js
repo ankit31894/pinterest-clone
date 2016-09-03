@@ -19,8 +19,12 @@ module.exports={
             if(er)return next("Some Error Occured");
             var ndoc=doc.toObject();
             ndoc.linkersno=0;
-            ndoc.uploader={twitter:req.user.id};
-            res.json(ndoc);
+            User.findOne({_id:req.user.id},function(er,user){
+
+                ndoc.uploader={twitter:{username:user.twitter.username}};
+                res.json(ndoc);
+
+            })
         })
     }
 }

@@ -17,12 +17,12 @@ mainApp.controller('MyImgsController', function($scope,$http,$location,myhttp) {
       });
   })();
   $scope.insertImg=function(){
-      $scope.Imgs=[];
       $scope._insertImg=true;  //start from _ means loading flag for that function name
       $scope.E_insertImg="";  //start from E_ means error string for that function name
       myhttp.fetch({
           url:'/insertimg',method:'POST',data:$scope.formData
       }).then(function(d){
+          console.log(d);
           $scope.Imgs.push(d);
       },function(err){
           $scope.E_insertImg=err;
