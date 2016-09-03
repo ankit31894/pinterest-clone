@@ -1,0 +1,25 @@
+<div>
+  <form class="ptb15 col-sm-3 col-sm-push-9" ng-submit="insertImg()">
+    <input name="poll" ng-model="formData.title" placeholder="Insert Image Title" class="col-xs-12 ptb10 mtb5">
+    <input name="poll2" ng-model="formData.url" placeholder="Insert Image URL" class="col-xs-12 ptb10 mtb5">
+    <button type="submit" class="ptb10 btn-primary">Submit</button>
+    <div ng-if="_insertImg">Loading</div>
+    <div ng-if="E_insertImg">{{E_insertImg}} <a href="#" ng-click="insertImg()">Try Again</a></div>
+    <div ng-if="C_insertImg">{{C_insertImg}}</div>
+  </form>
+  <div class="col-sm-9 col-sm-pull-3">
+    <div ng-if="_getImgs">Loading</div>
+    <div ng-if="E_getImgs">{{E_getImgs}} <a href="#" ng-click="getImgs()">Try Again</a></div>
+    <div masonry>
+      <div class="masonry-brick"  ng-repeat="value in Imgs">
+        <img ng-src="{{value.url}}" style="max-width:100%;" err-src="../img/placeholder.png">
+        <div class="col-xs-6 text-left ptb5">
+          <a href="/profile/{{value.uploader.twitter.username}}">
+            @{{value.uploader.twitter.username}}
+          </a>
+        </div>
+        <div class="col-xs-6 text-right ptb5" ng-class="{highlight:value.linked}" ng-click="linkImg(value)">{{value.linkersno}}</div>
+      </div>
+    </div>
+  </div>
+</div>

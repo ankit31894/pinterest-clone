@@ -1,0 +1,16 @@
+
+<div>
+    <div ng-if="_getImgs">Loading</div>
+    <div ng-if="E_getImgs">{{E_getImgs}} <a href="#" ng-click="getImgs()">Try Again</a></div>
+    <div masonry>
+      <div class="masonry-brick"  ng-repeat="value in Imgs">
+        <img ng-src="{{value.url}}" style="max-width:100%;" err-src="../img/placeholder.png">
+        <div class="col-xs-6 text-left ptb5">
+        	<a href="/profile/{{value.uploader.twitter.username}}">
+        		@{{value.uploader.twitter.username}}
+        	</a>
+        </div>
+        <div class="col-xs-6 text-right ptb5" ng-class="{highlight:value.linked}" ng-click="linkImg(value)">{{value.linkersno}}</div>
+      </div>
+    </div>
+</div>

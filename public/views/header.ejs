@@ -1,0 +1,13 @@
+<header class="row ptb5">
+    <h1 class="col-sm-4 col-sm-offset-1 mtb20"><a href="/"><%= appName %></a></h1>
+    <div class="col-sm-7 text-right ptb20">
+        <%if (!logged) { %>
+        <a href="/login/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
+        <% } else { %>
+                <a href="/" class="beauty-button transitioned">Home</a>
+                <a href="/mypics" class="beauty-button transitioned">My Pics</a>
+                <a href="/mylinks" class="beauty-button">My Linked Images</a>
+                <a href="/logout" class="beauty-button">Logout</a>
+        <% } %>
+    </div>
+</header>

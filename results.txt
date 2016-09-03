@@ -1,0 +1,31 @@
+
+[0m[0m
+[0m  Insert User Test[0m
+  [32m  ✓[0m[90m should insert a user with twitter.id 1234[0m[31m (412ms)[0m
+  [32m  ✓[0m[90m should insert a user with twitter.id 12345[0m
+  [32m  ✓[0m[90m should insert a user with twitter.id 123456[0m
+  [32m  ✓[0m[90m should insert a img for user1[0m[31m (358ms)[0m
+  [32m  ✓[0m[90m should insert a img for user2[0m
+  [32m  ✓[0m[90m should insert another img for user2[0m
+  [32m  ✓[0m[90m should link img1 for user1[0m
+  [32m  ✓[0m[90m should link img2 for user1[0m
+  [32m  ✓[0m[90m should get all  images[0m
+true
+true
+  [32m  ✓[0m[90m should get link user1 images[0m
+  [32m  ✓[0m[90m should unlink img1 for user1[0m
+true
+  [32m  ✓[0m[90m should get link user1 images[0m
+  [31m  1) should get user2 uploaded images[0m
+
+
+[92m [0m[32m 12 passing[0m[90m (907ms)[0m
+[31m  1 failing[0m
+
+[0m  1) Insert User Test should get user2 uploaded images:
+[0m[31m     TypeError: getmyuploadImg.get is not a function[0m[90m
+    at Context.<anonymous> (test/app/mongo.js:120:24)
+  
+[0m
+
+
