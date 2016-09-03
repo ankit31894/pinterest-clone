@@ -17,7 +17,10 @@ module.exports={
         var nImg = new Img(img);
         nImg.save(function(er,doc){
             if(er)return next("Some Error Occured");
-            res.json(doc);
+            var ndoc=doc.toObject();
+            ndoc.linkersno=0;
+            ndoc.uploader={twitter:req.user.id};
+            res.json(ndoc);
         })
     }
 }
